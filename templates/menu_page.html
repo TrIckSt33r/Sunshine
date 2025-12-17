@@ -1,0 +1,631 @@
+
+<head>
+    <title>Menu | Sunshine Restaurant</title>
+    <meta name="description" content="Consulta il menu del Sunshine Restaurant: antipasti, primi, secondi di mare e pescato del giorno. Cucina napoletana autentica.">
+
+</head>
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="menu-full py-5">
+    <div class="container mt-5">
+
+        <h2 class="text-center mt-4 mb-4">Menu</h2>
+
+        <!-- ANTIPASTI SPECIALI -->
+        <h3 id="antipasti" class="menu-category-title">Antipasti Speciali</h3>
+
+        {% for item in antipasti %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <span class="price">€ {{ "%.2f"|format(item.price) }}</span>
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+            </div>
+        {% endfor %}
+
+         <!-- CRUDI E OSTRICHE -->
+        <h3 id="crudi" class="menu-category-title">Crudi e Ostriche</h3>
+
+        {% for item in crudi %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        <span class="unit ms-2">{{ item.unit}}</span>
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+        <!-- CROSTACEI -->
+        <h3 id="Crostacei" class="menu-category-title">Crostacei</h3>
+
+        {% for item in crostacei %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+        <div class="text-center mt-5">
+            <p>Tutto secondo disponibilità. <br> Servito crudo o cotto a scelta del cliente.</p>
+        </div>
+
+
+        <!-- ANTIPASTI FREDDI -->
+        <h3 id="antipasti_freddi" class="menu-category-title">Antipasti Freddi</h3>
+
+        {% for item in antipasti_freddi %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+         <!-- ANTIPASTI CALDI -->
+        <h3 id="antipasti_caldi" class="menu-category-title">Antipasti Caldi</h3>
+
+        {% for item in antipasti_caldi %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+
+         <!-- PESCATO DEL GIORNO -->
+        <h3 id="Pescato_del_giorno" class="menu-category-title">Pescato Del Giorno</h3>
+
+        {% for item in pescato_del_giorno %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+
+         <!-- PRIMI -->
+        <h3 id="primi" class="menu-category-title">Primi</h3>
+
+        {% for item in primi %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4 class="md-3">{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+
+
+        <!-- SECONDI -->
+        <h3 id="secondi" class="menu-category-title">Secondi</h3>
+
+        {% for item in secondi %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+
+
+        <!-- NOSTRI FRITTI -->
+        <h3 id="fritti" class="menu-category-title">Nostri Fritti</h3>
+
+        {% for item in nostri_fritti %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+
+        <!-- CONTORNI -->
+        <h3 id="contorni" class="menu-category-title">Contorni</h3>
+
+        {% for item in contorni %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+        <!-- FRUTTA -->
+        <h3 id="frutta" class="menu-category-title">Frutta</h3>
+
+        {% for item in frutta %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+        <!-- DOLCI -->
+        <h3 id="dolci" class="menu-category-title">Dolci</h3>
+
+        {% for item in dolci %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+
+        <!-- BIBITE -->
+        <h3 id="bibite" class="menu-category-title">Bibite</h3>
+
+        {% for item in bibite %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+        <!-- VINI AL CALICE -->
+        <h3 id="vini_al_calice" class="menu-category-title">Vini Al Calice</h3>
+
+        {% for item in vini_al_calice %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+
+        <!-- BAR -->
+        <h3 id="bar" class="menu-category-title">Bar</h3>
+
+        {% for item in bar %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+        <!-- VINI BIANCHI CAMPANIA -->
+        <h3 id="vini_bianchi_campania" class="menu-category-title">Vini Bianchi (CAMPANIA)</h3>
+
+        
+
+        {% for item in vini_bianchi_campania %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+
+        <!-- VINI BIANCHI ADIGE -->
+        <h3 id="vini_bianchi_adige" class="menu-category-title">Vini Bianchi (ALTO ADIGE)</h3>
+
+        
+
+        {% for item in vini_bianchi_adige %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+        <!-- VINI BIANCHI PROSECCO -->
+        <h3 id="vini_bianchi_prosecco" class="menu-category-title">Vini Bianchi (PROSECCO)</h3>
+
+        
+
+        {% for item in vini_bianchi_prosecco %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+        
+
+        <!-- VINI ROSSI -->
+        <h3 id="vini_rossi" class="menu-category-title">Vini Rossi</h3>
+
+        {% for item in vini_rossi %}
+            <div class="menu-full-item">
+
+                <div class="menu-full-line">
+                    <h4>{{ item.name }}</h4>
+                    <div>
+                        <span class="price">€ {{ "%.2f"|format(item.price) }} </span>
+                        
+                    </div>
+                    
+                </div>
+
+                {% if item.desc %}
+                    {% if item.desc is iterable and item.desc is not string %}
+                        <ul>
+                        {% for d in item.desc %}
+                            <li>{{ d }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ item.desc }}</p>
+                    {% endif %}
+                {% endif %}
+
+
+            </div>
+        {% endfor %}
+
+
+    </div>
+</section>
+
+
+
+{% endblock %}

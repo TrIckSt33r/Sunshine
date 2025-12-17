@@ -1,0 +1,90 @@
+<head>
+    <title>Servizi | Sunshine Restaurant</title>
+    <meta name="description" content="Scopri i servizi del Sunshine Restaurant: pranzo e cena alla carta, menu degustazione di mare e pescato fresco a Napoli.">
+
+</head>
+
+
+
+{% extends "base.html" %}
+{% block content %}
+
+<section class="services-hero">
+    <div class="container text-center">
+        <h1>I nostri servizi</h1>
+        <p>
+            Esperienze di mare autentiche, curate in ogni dettaglio
+        </p>
+    </div>
+</section>
+
+
+<section class="services-detail py-5">
+    <div class="container">
+
+        <!-- PRANZO & CENA -->
+        <div class="row align-items-center mb-5">
+            <div class="mb-4 col-lg-6 reveal-on-scroll">
+                <img src="{{ url_for('static', filename='img/services/carta.jpg') }}" class="service-img">
+            </div>
+            <div class="mb-4 col-lg-6 reveal-on-scroll">
+                <h2>Pranzo & Cena alla Carta</h2>
+                <p>
+                    Ogni giorno proponiamo un menu à la carte che valorizza la tradizione
+                    della cucina di mare, con piatti preparati al momento e ingredienti
+                    selezionati.
+                </p>
+                <ul>
+                    <li>Piatti di mare freschi e stagionali</li>
+                    <li>Ricette della tradizione napoletana</li>
+                    <li>Ingredienti selezionati con cura</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- DEGUSTAZIONE -->
+        <div class="row align-items-center mb-5 flex-lg-row-reverse">
+            <div class="mb-4 col-lg-6 reveal-on-scroll">
+                <img src="{{ url_for('static', filename='img/services/degustazione.jpg') }}" class="service-img">
+            </div>
+            <div class="mb-4 col-lg-6 reveal-on-scroll">
+                <h2>Menu Degustazione di Mare</h2>
+                <p>
+                    Un percorso gastronomico studiato dallo chef per accompagnarti
+                    alla scoperta dei sapori del mare, tra creatività ed equilibrio.
+                </p>
+                <ul>
+                    <li>Percorsi guidati dallo chef</li>
+                    <li>Piatti selezionati e stagionali</li>
+                    <li>Abbinamenti consigliati con i vini</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PESCATO DEL GIORNO -->
+        <div class="row align-items-center mb-5">
+            <div class="mb-4 col-lg-6 reveal-on-scroll">
+                <img src="{{ url_for('static', filename='img/services/pescato.jpg') }}" class="service-img">
+            </div>
+            <div class="mb-4 col-lg-6 reveal-on-scroll">
+                <h2>Pescato del Giorno</h2>
+                <p>
+                    Ogni giorno selezioniamo il miglior pescato fresco, disponibile
+                    secondo arrivo e stagionalità, per garantire il massimo della qualità.
+                </p>
+                <ul>
+                    <li>Pesce fresco di giornata</li>
+                    <li>Preparazioni semplici e autentiche</li>
+                    <li>Disponibilità variabile secondo il mare</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}

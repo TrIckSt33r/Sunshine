@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero-section" style="background-image: url('{{ url_for('static', filename='img/hero1.jpeg') }}');"> 
+     <div class="hero-overlay"></div>
+
+     <div class="container h-100 d-flex flex-column justify-content-center">
+         <div class="hero-content">
+
+            <h5 class="hero-subtitle">Benvenuto al Sunshine Restaurant</h5>
+
+            <h1 class="hero-title">
+                Il Mare,<br>
+                Servito Con Passione
+            </h1>
+
+            <div class="hero-buttons mt-4">
+                <a href="https://wa.me/393512761280?text=Ciao%20vorrei%20prenotare%20un%20tavolo"
+                 class="btn hero-cta" target="_blank"
+                aria-label="Prenota su WhatsApp">Prenota ora</a>
+                <a href="/menu" class="btn hero-secondary">Esplora il menu</a>
+            </div>
+
+        </div>
+     </div>
+
+</section>
+
+
+
+<!-- MENU SECTION -->
+<section class="menu-preview py-5">
+    <div class="container">
+        <!-- TITOLO SEZIONE -->
+        <div class="text-center mb-5">
+            <h2 class="category-section-title">Dal nostro menu</h2>
+            <p class="category-section-sub">Scopri i piatti del Sunshine Restaurant divisi per sezione</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+
+            <!-- ANTIPASTI -->
+            <div class="col-lg-4 col-md-6">
+                <div class="category-card reveal-on-scroll">
+                    <img src="{{ url_for('static', filename='img/antipasti.png') }}" 
+                         alt="Antipasti" class="category-img">
+                    <h3>Antipasti Speciali</h3>
+                    <p>Dai fritti alle specialità della casa, perfetti per iniziare il tuo viaggio gastronomico.</p>
+                    <a href="/menu#antipasti" class="btn category-btn">Vai alla sezione</a>
+                </div>
+            </div>
+
+            <!-- PRIMI -->
+            <div class="col-lg-4 col-md-6">
+                <div class="category-card reveal-on-scroll">
+                     <img src="{{ url_for('static', filename='img/primo.png') }}" 
+                         alt="Primi" class="category-img">
+                    <h3>Primi</h3>
+                    <p>Pasta fresca, sapori mediterranei, ricette tradizionali che conquistano ogni palato.</p>
+                    <a href="/menu#primi" class="btn category-btn">Vai alla sezione</a>
+                </div>
+            </div>
+
+            <!-- VINI -->
+            <div class="col-lg-4 col-md-6">
+                <div class="category-card reveal-on-scroll">
+                    <img src="{{ url_for('static', filename='img/vino.png') }}" 
+                         alt="Secondi" class="category-img">
+                    <h3>Vini</h3>
+                    <p>Una scelta raffinata di vini bianchi, rossi e bollicine, selezionati per accompagnare alla perfezione ogni piatto..</p>
+                    <a href="/menu#vini_bianchi_campania" class="btn category-btn">Vai alla sezione</a>
+                </div>
+            </div>
+
+           <div class="text-center mt-5">
+                <a href="/menu" class="btn full-menu-btn">
+                    Guarda il Menu Completo
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- ABOUT US SECTION -->
+<section class="about-section text-center  my-5"  style="background-image: url('{{ url_for('static', filename='img/about/about.jpg') }}');">
+    <div class="container ">
+        <h2 >Chi Siamo</h2>
+        <p>Nel cuore di Napoli, il Sunshine Restaurant celebra la tradizione napoletana attraverso la freschezza del mare e ingredienti selezionati ogni giorno.</p>
+
+        <a href="/about" class="btn about-section-btn">Leggi di più</a>
+    </div>
+    
+</section>
+
+<!-- ==== DOVE TROVARCI ====-->
+<section id="contatti" class="location-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- INFO -->
+            <div class="col-lg-5 mb-4 mb-lg-0 reveal-on-scroll">
+                <h2 class="location-title">Dove trovarci</h2>
+                <p class="location-text">
+                    Vieni a trovarci nel cuore di Napoli, a pochi passi dal mare.
+                </p>
+
+                <ul class="location-info">
+                    <li>
+                        <strong>📍 Indirizzo</strong><br>
+                        Via Giordano Bruno, 129, 80122 Napoli NA
+                    </li>
+                    <li>
+                        <strong>📞 Telefono</strong><br>
+                        <a href="tel:+390812345678">+39 081 976 2892</a>
+                    </li>
+                    <li>
+                        <strong>✉️ Email</strong><br>
+                        <a href="mailto:info@sunshinerestaurant.it">
+                            raggiodisoleristorante@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        <strong>⏰ Orari</strong><br>
+                        Mar – Ven: 19:00 – 23:30 <br>
+                        Sab: 12:00 – 15 / 18:30 – 00:00 <br>
+                        Dom: 12:00 – 18:00
+                    </li>
+                </ul>
+            </div>
+
+            <!-- MAPPA -->
+            <div class="col-lg-7 reveal-on-scroll">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3018.8707332604495!2d14.218963375252226!3d40.830802930335324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b09bfc21de35b%3A0xac4141c13858a52!2sSunshine%20Restaurant%20Passione%20e%20Tradizione!5e0!3m2!1sit!2sit!4v1765876590592!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="location-cta mt-4">
+   
+
+                <a href="https://wa.me/393512761280"
+                class="btn cta-btn me-2"
+                target="_blank">
+                    Contattaci
+                </a>
+
+                
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="reviews-section py-5">
+    <div class="container">
+
+        <!-- TITOLO -->
+        <div class="text-center mb-5">
+            <h2>Le nostre recensioni</h2>
+            <p>Cosa dicono i nostri clienti</p>
+        </div>
+
+        <!-- CAROUSEL -->
+        <div id="reviewsCarousel"
+     class="carousel slide"
+     data-bs-ride="carousel"
+     data-bs-interval="5000"
+     data-bs-touch="true"
+     data-bs-pause="hover">
+
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <div class="review-card mx-auto">
+                <div class="stars">★★★★★</div>
+                <p>
+                    Cucina di mare eccezionale, pesce freschissimo
+                    e servizio impeccabile. Torneremo sicuramente.
+                </p>
+                <h5>Marco R.</h5>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="review-card mx-auto">
+                <div class="stars">★★★★★</div>
+                <p>
+                    Atmosfera elegante e piatti curati nei minimi dettagli.
+                    Il pescato del giorno è una garanzia.
+                </p>
+                <h5>Laura S.</h5>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="review-card mx-auto">
+                <div class="stars">★★★★★</div>
+                <p>
+                    Una vera esperienza di cucina napoletana di mare.
+                    Qualità altissima e grande attenzione al cliente.
+                </p>
+                <h5>Antonio M.</h5>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".custom-navbar");
+
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled-nav");
+    } else {
+        navbar.classList.remove("scrolled-nav");
+    }
+});
+</script>
+
+
+{% endblock %}
+
